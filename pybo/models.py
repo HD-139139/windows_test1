@@ -7,6 +7,7 @@ class Question(models.Model):
     content = models.TextField()
     create_date = models.DateTimeField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    modify_date = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
         return self.subject #Question 제목 보여주는 아이
@@ -16,4 +17,5 @@ class Answer(models.Model):
     content = models.TextField()
     create_date = models.DateTimeField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    modify_date = models.DateTimeField(null=True, blank=True)
 # Create your models here.
